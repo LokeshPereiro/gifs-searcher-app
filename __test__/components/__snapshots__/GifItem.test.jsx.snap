@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <GifItem /> Hacer MATCH con el SNAPSHOT 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Demon Slayer"
+      src="https://demon-slayer.com/kimetsu.jpg"
+    />
+    <h4>
+      Demon Slayer
+    </h4>
+  </div>
+</div>
+`;
