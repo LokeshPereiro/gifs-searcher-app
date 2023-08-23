@@ -1,6 +1,11 @@
 # Gifs Searching App
 
+<<<<<<< HEAD
 Se trata de una pequeña app desarrollada con el Reactjs que consume la endpoint de GIPHY para poder buscar los gifs que queramos y obtener los resultados en la pantalla.
+=======
+Se trata de una pequeña app desarrollada con el Reactjs que consume la endpoint de giphy para poder buscar los gifs que queramos y obtener los resultados en la pantalla.
+--> https://lok-gifs-searcher-app.netlify.app
+>>>>>>> 733c161a3dc571a73fdf0f955fa6ad398e748f75
 
 ## Tech Stack
 
