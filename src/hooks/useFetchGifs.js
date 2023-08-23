@@ -1,22 +1,22 @@
 import { useState, useEffect } from "react";
-import { getGifs } from "../helpers/getGifs";
+import { getApiGifs } from "../helpers/getApiGifs";
 
-export const useFetchGifs = (search) => {
-  const [images, setImages] = useState([]);
+export const useFetchGifs = (searchKey) => {
+  const [imagesGifs, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getImages = async () => {
-    const newImgs = await getGifs(search);
-    setImages(newImgs);
+  const getImagesGifs = async () => {
+    const newImgGifs = await getApiGifs(searchKey);
+    setImages(newImgGifs);
     setIsLoading(false);
   };
 
   useEffect(() => {
-    getImages();
+    getImagesGifs();
   }, []);
 
   return {
-    images: images,
+    gifs: imagesGifs,
     isLoading: isLoading,
   };
 };

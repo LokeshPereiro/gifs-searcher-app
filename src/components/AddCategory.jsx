@@ -8,22 +8,20 @@ export function AddCategory({ onNewSearchingGif }) {
     setInputValue(e.target.value);
   };
 
-  const onSubmittedValue = (e) => {
-    // console.log("Hola Mundo desde el OnSubmit Testing!");
-
+  const onSubmitedValue = (e) => {
     e.preventDefault();
     // console.log(inputValue);
     // Pequeña validacion para que se introducza más de 1 caracter en el input y que no se envie input vacio
     if (inputValue.trim().length <= 1) return;
     // onNewSearchingGif((prevSearchedKeys) => [inputValue, ...prevSearchedKeys]);
 
-    setInputValue("");
     onNewSearchingGif(inputValue.trim());
+    setInputValue("");
   };
 
   return (
     <>
-      <form onSubmit={onSubmittedValue} aria-label="form">
+      <form onSubmit={onSubmitedValue} aria-label="form">
         <input
           type="text"
           placeholder="Search Your Fav Gifs"

@@ -10,24 +10,22 @@ const popularAnimes = [
 ];
 
 export function GifSearchApp() {
-  const [searchKey, setSearchKey] = useState([]);
+  const [searchList, setSearchList] = useState([]);
 
-  const onAddSearchedValue = (newSearchKey) => {
+  const onAddSearchedValue = (newSearchingKey) => {
     /*
-
     // Busqueda estática Op.1
-    setSearchKey([...searchKey, "Hey Hello"]);
+    setSearchList([...searchList, "Hey Hello"]);
 
     // Busqueda estática Op.2 mediante el callback
-    setSearchKey((s) => [...s, "Hey Hello"]);
-    
+    setSearchList((s) => [...s, "Hey Hello"]);
     */
 
-    // console.log(newSearchKey);
-    // Si lo que he buscado ya existe en los resultados que no haga nada..
-    if (searchKey.includes(newSearchKey)) return;
+    // console.log(newSearchingKey);
+    // Si lo que he buscado ya existe en la pantalla (grid), que no haga nada
+    if (searchList.includes(newSearchingKey)) return;
 
-    setSearchKey([newSearchKey, ...searchKey]);
+    setSearchList([newSearchingKey, ...searchList]);
   };
 
   return (
@@ -39,14 +37,12 @@ export function GifSearchApp() {
 
       {/* Input para hacer el Search */}
       {/* Le paso mi funcion como prop para que me devuleva el campo de busqueda como argumento/evento */}
-      <AddCategory onNewSearchingGif={(evt) => onAddSearchedValue(evt)} />
+      <AddCategory onNewSearchingGif={onAddSearchedValue} />
       {/* <AddCategory onNewSearchingGif={onAddSearchedValue} /> */}
 
       {/* Lista de los resultados consultados */}
-      {searchKey.map((search) => (
-        // return <li>HOLA</li>;
-        // Target de los resultados
-        <GifGridItems key={search} search={search} />
+      {searchList.map((searchItems) => (
+        <GifGridItems key={searchItems} searchItems={searchItems} />
       ))}
     </>
   );
